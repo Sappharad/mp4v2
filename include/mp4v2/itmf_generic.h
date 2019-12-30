@@ -138,26 +138,26 @@ typedef struct MP4ItmfItemList_s
  *  @param numData number of data elements to allocate. Must be >= 1.
  *  @return newly allocated item.
  */
-MP4V2_EXPORT MP4ItmfItem*
+MP4ItmfItem*
 MP4ItmfItemAlloc( const char* code, uint32_t numData );
 
 /** Free an item (deep free).
  *  @param item to be free'd.
  */
-MP4V2_EXPORT void
+void
 MP4ItmfItemFree( MP4ItmfItem* item );
 
 /** Free an item list (deep free).
  *  @param itemList to be free'd.
  */
-MP4V2_EXPORT void
+void
 MP4ItmfItemListFree( MP4ItmfItemList* itemList );
 
 /** Get list of all items from file.
  *  @param hFile handle of file to operate on.
  *  @return On succes, list of items, which must be free'd. On failure, NULL.
  */
-MP4V2_EXPORT MP4ItmfItemList*
+MP4ItmfItemList*
 MP4ItmfGetItems( MP4FileHandle hFile );
 
 /** Get list of items by code from file.
@@ -165,7 +165,7 @@ MP4ItmfGetItems( MP4FileHandle hFile );
  *  @param code four-char code identifying atom type. NULL-terminated.
  *  @return On succes, list of items, which must be free'd. On failure, NULL.
  */
-MP4V2_EXPORT MP4ItmfItemList*
+MP4ItmfItemList*
 MP4ItmfGetItemsByCode( MP4FileHandle hFile, const char* code );
 
 /** Get list of items by meaning from file.
@@ -175,7 +175,7 @@ MP4ItmfGetItemsByCode( MP4FileHandle hFile, const char* code );
  *  @param name may be NULL. UTF-8 name. NULL-terminated.
  *  @return On succes, list of items, which must be free'd. On failure, NULL.
  */
-MP4V2_EXPORT MP4ItmfItemList*
+MP4ItmfItemList*
 MP4ItmfGetItemsByMeaning( MP4FileHandle hFile, const char* meaning, const char* name );
 
 /** Add an item to file.
@@ -183,7 +183,7 @@ MP4ItmfGetItemsByMeaning( MP4FileHandle hFile, const char* meaning, const char* 
  *  @param item object to add.
  *  @return <b>true</b> on success, <b>false</b> on failure.
  */
-MP4V2_EXPORT bool
+bool
 MP4ItmfAddItem( MP4FileHandle hFile, const MP4ItmfItem* item );
 
 /** Overwrite an existing item in file.
@@ -191,7 +191,7 @@ MP4ItmfAddItem( MP4FileHandle hFile, const MP4ItmfItem* item );
  *  @param item object to overwrite. Must have a valid index obtained from prior get.
  *  @return <b>true</b> on success, <b>false</b> on failure.
  */
-MP4V2_EXPORT bool
+bool
 MP4ItmfSetItem( MP4FileHandle hFile, const MP4ItmfItem* item );
 
 /** Remove an existing item from file.
@@ -199,7 +199,7 @@ MP4ItmfSetItem( MP4FileHandle hFile, const MP4ItmfItem* item );
  *  @param item object to remove. Must have a valid index obtained from prior get.
  *  @return <b>true</b> on success, <b>false</b> on failure.
  */
-MP4V2_EXPORT bool
+bool
 MP4ItmfRemoveItem( MP4FileHandle hFile, const MP4ItmfItem* item );
 
 /** @} ***********************************************************************/
