@@ -257,6 +257,12 @@ typedef uint32_t (*encryptFunc_t)( uint32_t, uint32_t, uint8_t*, uint32_t*, uint
 #define MPEG4_FGSP_L4 (0xfc)
 #define MPEG4_FGSP_L5 (0xfd)
 
+#ifndef MP4V2_EXPORT
+//Hack for XCode project which should not be needed because platform.h is included before this
+//but for some reason it's not working and I don't want to waste more time figuring this out.
+#define MP4V2_EXPORT __attribute__((visibility("default")))
+#endif
+
 /*****************************************************************************/
 
 /* 3GP specific utilities */
